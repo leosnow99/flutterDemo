@@ -7,7 +7,6 @@ import 'package:ninghao/demo/drawer_demo.dart';
 import 'package:ninghao/demo/listView-demo.dart';
 import 'package:ninghao/demo/sliver_demo.dart';
 
-import 'demo/layoutDemo.dart';
 import 'demo/viewDemo.dart';
 
 void main() => runApp(App());
