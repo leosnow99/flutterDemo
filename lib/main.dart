@@ -5,6 +5,7 @@ import 'package:ninghao/demo/basicDemo.dart';
 import 'package:ninghao/demo/bottomNavigationBarDemo.dart';
 import 'package:ninghao/demo/drawer_demo.dart';
 import 'package:ninghao/demo/listView-demo.dart';
+import 'package:ninghao/demo/sliver_demo.dart';
 
 import 'demo/layoutDemo.dart';
 import 'demo/viewDemo.dart';
@@ -44,10 +45,7 @@ class Home extends StatelessWidget {
             "DEMO",
           ),
           actions: [
-            IconButton(
-                icon: Icon(Icons.search),
-                tooltip: "Search",
-                onPressed: () => debugPrint("Search clicked!"))
+            IconButton(icon: Icon(Icons.search), tooltip: "Search", onPressed: () => debugPrint("Search clicked!"))
           ],
           elevation: 10.0,
           bottom: TabBar(
@@ -71,17 +69,19 @@ class Home extends StatelessWidget {
             ],
           ),
         ),
-        body: TabBarView(
-          children: <Widget>[
-            ListViewDemo(),
-            BasicDemo(),
-            LayoutDemo(),
-            ViewDemo()
-          ],
-        ),
+        body: TabBarViewDemo(),
         drawer: DrawerDemo(),
         bottomNavigationBar: BottomNavigationBarDemo(),
       ),
+    );
+  }
+}
+
+class TabBarViewDemo extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return TabBarView(
+      children: <Widget>[ListViewDemo(), BasicDemo(), SliverDemo(), ViewDemo()],
     );
   }
 }
