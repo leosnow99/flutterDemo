@@ -4,9 +4,11 @@ import 'package:flutter/widgets.dart';
 import 'package:ninghao/demo/basicDemo.dart';
 import 'package:ninghao/demo/bottomNavigationBarDemo.dart';
 import 'package:ninghao/demo/drawer_demo.dart';
+import 'package:ninghao/demo/form_demo.dart';
 import 'package:ninghao/demo/listView-demo.dart';
 import 'package:ninghao/demo/sliver_demo.dart';
-
+import 'demo/MaterialComponents.dart';
+import 'demo/navigator_demo.dart';
 import 'demo/viewDemo.dart';
 
 void main() => runApp(App());
@@ -17,9 +19,18 @@ class App extends StatelessWidget {
     // TODO: implement build
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Home(),
+      initialRoute: "/mdc",
+      routes: {
+        '/': (context) => Home(),
+        '/about': (context) => PageDemo("ni"),
+        '/about/form': (context) => FormDemo(),
+        '/mdc': (context) => MaterialComponents(),
+      },
+      // home: Home(),
       theme: ThemeData(
           primarySwatch: Colors.yellow,
+          accentColor: Colors.blue,
+          buttonColor: Colors.lightGreen,
           highlightColor: Color.fromRGBO(255, 255, 255, 0.5),
           splashColor: Colors.white70),
     );
@@ -75,6 +86,14 @@ class Home extends StatelessWidget {
     );
   }
 }
+
+class AppBarDemo extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+  }
+}
+
 
 class TabBarViewDemo extends StatelessWidget {
   @override
