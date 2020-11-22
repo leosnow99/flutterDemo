@@ -1,15 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:ninghao/demo/bottomSheetDemo.dart';
 import 'package:ninghao/demo/checkboxDemo.dart';
+import 'package:ninghao/demo/chipDemo.dart';
+import 'package:ninghao/demo/dataTableDemo.dart';
 import 'package:ninghao/demo/dateDemo.dart';
 import 'package:ninghao/demo/expansionPanelDemo.dart';
 import 'package:ninghao/demo/form_demo.dart';
+import 'package:ninghao/demo/paginatedDataTableDemo.dart';
 import 'package:ninghao/demo/popup_menu_button_demo.dart';
 import 'package:ninghao/demo/radioDemo.dart';
 import 'package:ninghao/demo/simpleDialog.dart';
+import 'package:ninghao/demo/stepperDemo.dart';
 import 'package:ninghao/demo/switchDemo.dart';
 
 import 'alertDailogDemo.dart';
+import 'cardDemo.dart';
 import 'sliderDemo.dart';
 import 'snackBarDemo.dart';
 
@@ -36,6 +41,11 @@ class MaterialComponents extends StatelessWidget {
           ListItem(title: 'BottomSheetDemo', page: BottomSheetDemo()),
           ListItem(title: 'SnackBarDemo', page: SnackBarDemo()),
           ListItem(title: 'ExpansionPanelDemoState', page: ExpansionPanelDemoState()),
+          ListItem(title: 'ChipDemo', page: ChipDemo()),
+          ListItem(title: 'DataTableDemo', page: DataTableDemo()),
+          ListItem(title: 'PaginatedDataTableDemo', page: PaginatedDataTableDemo()),
+          ListItem(title: 'CardDemo', page: CardDemo()),
+          ListItem(title: 'StepperDemo', page: StepperDemo()),
         ],
       ),
     );
