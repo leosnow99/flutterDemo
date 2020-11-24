@@ -7,6 +7,7 @@ import 'package:ninghao/demo/drawer_demo.dart';
 import 'package:ninghao/demo/form_demo.dart';
 import 'package:ninghao/demo/listView-demo.dart';
 import 'package:ninghao/demo/sliver_demo.dart';
+import 'package:ninghao/demo/stream/streamDemo.dart';
 import 'package:ninghao/state/stateManagementDemo.dart';
 import 'demo/MaterialComponents.dart';
 import 'demo/navigator_demo.dart';
@@ -20,13 +21,14 @@ class App extends StatelessWidget {
     // TODO: implement build
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: "/stateManagement",
+      initialRoute: "/stream",
       routes: {
         '/': (context) => Home(),
         '/about': (context) => PageDemo("ni"),
         '/about/form': (context) => FormDemo(),
         '/mdc': (context) => MaterialComponents(),
         '/stateManagement': (context) => StateManagementDemo(),
+        '/stream': (context) => StreamDemo(),
       },
       // home: Home(),
       theme: ThemeData(
@@ -95,7 +97,6 @@ class AppBarDemo extends StatelessWidget {
     return Container();
   }
 }
-
 
 class TabBarViewDemo extends StatelessWidget {
   @override
