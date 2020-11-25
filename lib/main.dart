@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:ninghao/demo/basicDemo.dart';
+import 'package:ninghao/demo/bloc/blocDemo.dart';
 import 'package:ninghao/demo/bottomNavigationBarDemo.dart';
 import 'package:ninghao/demo/drawer_demo.dart';
 import 'package:ninghao/demo/form_demo.dart';
@@ -21,7 +22,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: "/rxDart",
+      initialRoute: "/bloc",
       routes: {
         '/': (context) => Home(),
         '/about': (context) => PageDemo("ni"),
@@ -30,6 +31,7 @@ class App extends StatelessWidget {
         '/stateManagement': (context) => StateManagementDemo(),
         '/stream': (context) => StreamDemo(),
         '/rxDart': (context) => RxDartDemo(),
+        '/bloc': (context) => BlocDemo(),
 
       },
       // home: Home(),
