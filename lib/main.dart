@@ -6,6 +6,7 @@ import 'package:ninghao/demo/bottomNavigationBarDemo.dart';
 import 'package:ninghao/demo/drawer_demo.dart';
 import 'package:ninghao/demo/form_demo.dart';
 import 'package:ninghao/demo/listView-demo.dart';
+import 'package:ninghao/demo/rxdart/rxdartDemo.dart';
 import 'package:ninghao/demo/sliver_demo.dart';
 import 'package:ninghao/demo/stream/streamDemo.dart';
 import 'package:ninghao/state/stateManagementDemo.dart';
@@ -18,10 +19,9 @@ void main() => runApp(App());
 class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: "/stream",
+      initialRoute: "/rxDart",
       routes: {
         '/': (context) => Home(),
         '/about': (context) => PageDemo("ni"),
@@ -29,6 +29,8 @@ class App extends StatelessWidget {
         '/mdc': (context) => MaterialComponents(),
         '/stateManagement': (context) => StateManagementDemo(),
         '/stream': (context) => StreamDemo(),
+        '/rxDart': (context) => RxDartDemo(),
+
       },
       // home: Home(),
       theme: ThemeData(
