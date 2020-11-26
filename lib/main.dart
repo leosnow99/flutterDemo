@@ -6,6 +6,7 @@ import 'package:ninghao/demo/bloc/blocDemo.dart';
 import 'package:ninghao/demo/bottomNavigationBarDemo.dart';
 import 'package:ninghao/demo/drawer_demo.dart';
 import 'package:ninghao/demo/form_demo.dart';
+import 'package:ninghao/demo/http/httpDemo.dart';
 import 'package:ninghao/demo/listView-demo.dart';
 import 'package:ninghao/demo/rxdart/rxdartDemo.dart';
 import 'package:ninghao/demo/sliver_demo.dart';
@@ -22,7 +23,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: "/bloc",
+      initialRoute: "/http",
       routes: {
         '/': (context) => Home(),
         '/about': (context) => PageDemo("ni"),
@@ -32,6 +33,7 @@ class App extends StatelessWidget {
         '/stream': (context) => StreamDemo(),
         '/rxDart': (context) => RxDartDemo(),
         '/bloc': (context) => BlocDemo(),
+        '/http': (context) => HttpDemo(),
 
       },
       // home: Home(),
