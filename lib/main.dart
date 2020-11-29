@@ -15,6 +15,7 @@ import 'package:ninghao/demo/stream/streamDemo.dart';
 import 'package:ninghao/state/stateManagementDemo.dart';
 import 'demo/MaterialComponents.dart';
 import 'demo/navigator_demo.dart';
+import 'demo/provider/providerConsumerDemo.dart';
 import 'demo/viewDemo.dart';
 
 void main() => runApp(App());
@@ -24,7 +25,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: "/animation",
+      initialRoute: "/ProviderConsumerDemo",
       routes: {
         '/': (context) => Home(),
         '/about': (context) => PageDemo("ni"),
@@ -36,6 +37,7 @@ class App extends StatelessWidget {
         '/bloc': (context) => BlocDemo(),
         '/http': (context) => HttpDemo(),
         '/animation': (context) => AnimationDemo(),
+        '/ProviderConsumerDemo': (context) => ProviderConsumerDemo(),
 
       },
       // home: Home(),

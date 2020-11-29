@@ -54,13 +54,15 @@ class _HttpDemoHomeState extends State<HttpDemoHome> {
           );
         }
         return ListView(
-          children: snapshot.data.map<Widget>((item) => ListTile(
-                title: Text(item.title),
-                subtitle: Text(item.author),
-                leading: CircleAvatar(
-                  backgroundImage: NetworkImage(item.imageUrl),
-                ),
-              )).toList(),
+          children: snapshot.data
+              .map<Widget>((item) => ListTile(
+                    title: Text(item.title),
+                    subtitle: Text(item.author),
+                    leading: CircleAvatar(
+                      backgroundImage: NetworkImage(item.imageUrl),
+                    ),
+                  ))
+              .toList(),
         );
       },
       future: fetchPosts(),
@@ -85,4 +87,46 @@ class Post {
         imageUrl = json["imageUrl"];
 
   Map toJson() => {'id': id, 'author': author, 'imageUrl': imageUrl, 'title': title, 'description': description};
+}
+
+class FutureBuilderDemo extends StatefulWidget {
+  @override
+  _FutureBuilderDemoState createState() => _FutureBuilderDemoState();
+}
+
+class _FutureBuilderDemoState extends State<FutureBuilderDemo> {
+  String showResult = '';
+
+  Future fetchPost() async {
+    final response = await http.get("www.baidu.com");
+    var utf8decoder = Utf8Decoder();
+    return json.decode(utf8decoder.convert(response.bodyBytes));
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return FutureBuilder(
+      builder: (BuildContext context, AsyncSnapshot snapshot) {
+        switch (snapshot.connectionState) {
+          case ConnectionState.none:
+            return new Text('Input a URL to start');
+          case ConnectionState.waiting:
+            return new Center(child:  new CircularProgressIndicator(),);
+          case ConnectionState.active:
+            return new Text('');
+          case ConnectionState.done:
+            if (snapshot.hasError) {
+              return new Text(
+                '${snapshot.error}',
+                style: TextStyle(color: Colors.red),
+              );
+            } else {
+              return new Text('${snapshot.data}');
+            }
+        }
+        return Text('');
+      },
+      future: fetchPost(),
+    );
+  }
 }
